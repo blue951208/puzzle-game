@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script src="/jquery-ex/scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h1>LOGIN</h1>
+	<button id=join>회원가입</button>
+	<table>
+		<tr>
+			<td>member_ID</td>
+			<td><input id="member_id" type="text"></td>
+		</tr>
+		<tr>
+			<td>member_PW</td>
+			<td><input id="member_pw" type="text"></td>
+		</tr>
+	</table>
+	<button id="loginBtn">Login</button>
+</body>
+<script>
+	$("#loginBtn").click(function(){
+			$.ajax({
+				url:"/jquery-ex/Login",
+				method:"post",
+				data:{
+					memberId:$("#member_id").val(),
+					memberPw:$("#member_pw").val()
+				},
+				 success: function(){
+						location.href = "/jquery-ex/index.html"
+					}
+
+			});
+	});
+	$("#join").click(function(){
+		location.href = "/jquery-ex/join.html"
+	})
+</script>
+</html>

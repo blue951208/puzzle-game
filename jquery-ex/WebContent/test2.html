@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부르마블</title>
+<style>
+   td{
+      font-size:9px;
+      width: 150px;
+       height: 80px;
+       text-align:center;
+   }
+   .gold {
+      font-size:20px;
+      font-type:bold;
+   }
+</style>
+</head>
+<script src="/jquery-prac/script/jquery-3.4.1.min.js"></script>
+<body>
+<h3>
+   부르마블
+   <button type="button" id="diceBtn">King Dice!</button>
+   현재 플레이어 : <input type="text" id="player" value="">
+   주사위 값 : <input type="text" id="diceValue" value="">
+   이동지점 : <input type="text" id="point" value="">
+</h3>
+   플레이어1 고라파덕 돈 : <input type="text" id="player1money" value="">
+   플레이어2 따라큐 돈 : <input type="text" id="player2money" value="">
+<table border="1">
+   <tr>
+      <td id="p1"><div class="player">0</div>Start<div class="gold"><br>1</div><button class='btn-danger1'><img src='/jquery-prac/image/pic01.jpg'></button><button class='btn-danger2'><img src='/jquery-prac/image/pic02.jpg'></button></td>
+      <td id="p2"><div class="player">0</div>타이페이<div class="gold"><br>2</div></td>
+      <td id="p3"><div class="player">0</div>황금카드<div class="gold"><br>3</div></td>
+      <td id="p4"><div class="player">0</div>베이징<div class="gold"><br>4</div></td>
+      <td id="p5"><div class="player">0</div>마닐라<div class="gold"><br>5</div></td>
+      <td id="p6"><div class="player">0</div>제주도<div class="gold"><br>6</div></td>
+      <td id="p7"><div class="player">0</div>싱가포르<div class="gold"><br>7</div></td>
+      <td id="p8"><div class="player">0</div>황금카드<div class="gold"><br>8</div></td>
+      <td id="p9"><div class="player">0</div>카이로<div class="gold"><br>9</div></td>
+      <td id="p10"><div class="player">0</div>이스탄불<div class="gold"><br>10</div></td>
+      <td id="p11"><div class="player">0</div>무인도<div class="gold"><br>11</div></td>
+   </tr>
+   <tr>
+      <td id="p40"><div class="player">0</div>서울<div class="gold"><br>40</div></td>
+      <td rowspan="9" colspan="9"> </td>
+      <td id="p12"><div class="player">0</div>아테네<div class="gold"><br>12</div></td>
+   </tr>
+   <tr>
+      <td id="p39"><div class="player">0</div>사회복지기금<div class="gold"><br>39</div></td>
+      
+      <td id="p13"><div class="player">0</div>황금카드<div class="gold"><br>13</div></td>
+   </tr>
+   <tr>
+      <td id="p38"><div class="player">0</div>뉴욕<div class="gold"><br>38</div></td>
+      
+      <td id="p14"><div class="player">0</div>코펜하겐<div class="gold"><br>14</div></td>
+   </tr>
+   <tr>
+      <td id="p37"><div class="player">0</div>런던<div class="gold"><br>37</div></td>
+      
+      <td id="p15"><div class="player">0</div>스톡홀름<div class="gold"><br>15</div></td>
+   </tr>
+   <tr>
+      <td id="p36"><div class="player">0</div>황금열쇠<div class="gold"><br>36</div></td>
+      
+      <td id="p16"><div class="player">0</div>콩코드여객기<div class="gold"><br>16</div></td>
+   </tr>
+   <tr>
+      <td id="p35"><div class="player">0</div>로마<div class="gold"><br>35</div></td>
+      
+      <td id="p17"><div class="player">0</div>베른<div class="gold"><br>17</div></td>
+   </tr>
+   <tr>
+      <td id="p34"><div class="player">0</div>파리<div class="gold"><br>34</div></td>
+      
+      <td id="p18"><div class="player">0</div>황금카드<div class="gold"><br>18</div></td>
+   </tr>
+   <tr>
+      <td id="p33"><div class="player">0</div>콜럼비아호<div class="gold"><br>33</div></td>
+      
+      <td id="p19"><div class="player">0</div>베를린<div class="gold"><br>19</div></td>
+   </tr>
+   <tr>
+      <td id="p32"><div class="player">0</div>도쿄<div class="gold"><br>32</div></td>
+      
+      <td id="p20"><div class="player">0</div>오타와<div class="gold"><br>20</div></td>
+   </tr>
+   <tr>
+      <td id="p31"><div class="player">0</div>우주여행<div class="gold"><br>31</div></td>
+      <td id="p30"><div class="player">0</div>마드리드<div class="gold"><br>30</div></td>
+      <td id="p29"><div class="player">0</div>퀸엘리자베스호<div class="gold"><br>29</div></td>
+      <td id="p28"><div class="player">0</div>리스본<div class="gold"><br>28</div></td>
+      <td id="p27"><div class="player">0</div>하와이<div class="gold"><br>27</div></td>
+      <td id="p26"><div class="player">0</div>부산<div class="gold"><br>26</div></td>
+      <td id="p25"><div class="player">0</div>시드니<div class="gold"><br>25</div></td>
+      <td id="p24"><div class="player">0</div>쌍파울로<div class="gold"><br>24</div></td>
+      <td id="p23"><div class="player">0</div>황금카드<div class="gold"><br>23</div></td>
+      <td id="p22"><div class="player">0</div>부에노스아이레스<div class="gold"><br>22</div></td>
+      <td id="p21"><div class="player">0</div>시회복지기금<div class="gold"><br>21</div></td>
+   </tr>
+</table>
+</body>
+<script>
+   $(document).ready(function(){
+      //플레이어1 이동 전 지점
+      let beforePoint1 = 1;
+      //플레이어1 이동 후 지점
+      let afterPoint1 = 1;
+      //플레이어2 이동 전 지점
+      let beforePoint2 = 1;
+      //플레이어2 이동 후 지점
+      let afterPoint2 = 1;
+      //돈
+      let player1money = 3000000;
+      let player2money = 3000000;
+      //플레이어
+      let player = 1;
+      //주사위 클릭시
+      $("#diceBtn").click(function(){
+         //주사위 세팅(1~6까지 숫자 랜덤)
+         let ran = Math.floor(Math.random()*6+1);
+         $("#diceValue").val(ran);
+         if(player==1){
+            //주사위를 굴렸을때 이동지점
+            if(beforePoint1+ran < 41){
+               afterPoint1 = beforePoint1+ran;
+            } else {
+               afterPoint1 = beforePoint1+ran-40;
+            }
+            $("#point").val(afterPoint1);
+            //이동한 지점에 유저 버튼 생성
+            let html = "<button class='btn-danger1'>"+"<img src='/jquery-prac/image/pic0"+player+".jpg'>"+"</button>";
+            let beforeId1 = "#p"+beforePoint1;
+            let afterId1 = "#p"+afterPoint1;
+            $(afterId1).append(html);
+            $(beforeId1).find(".btn-danger1").remove();
+            beforePoint1 = afterPoint1;
+            //밟은 땅 주인 체크
+            if($(afterId1).find(".player").text() == 0){
+               //땅 주인 세팅 (플레이어1 이면 1 이 들어감)
+               $(afterId1).find(".player").text(player);
+               //주인이없으면 땅 가격 세팅
+               $(afterId1).find(".gold").text(100000);
+            } else {
+               //주인이 없으면 땅 가격만큼 가진 돈에서 차감
+               player1money = player1money-($(afterId1).find(".gold").text());
+               $("#player1money").val(player1money);
+            }
+            player++;
+         } else {
+            $("#player").val(player);
+            //주사위
+            if(beforePoint2+ran < 41){
+               afterPoint2 = beforePoint2+ran;
+            } else {
+               afterPoint2 = beforePoint2+ran-40;
+            }
+            $("#point").val(afterPoint2);
+            //이동한 지점에 유저 버튼 생성
+            let html = "<button class='btn-danger2'>"+"<img src='/jquery-prac/image/pic0"+player+".jpg'>"+"</button>";
+            let beforeId2 = "#p"+beforePoint2;
+            let afterId2 = "#p"+afterPoint2;
+            $(afterId2).append(html);
+            $(beforeId2).find(".btn-danger2").remove();
+            beforePoint2 = afterPoint2;
+            //밟은 땅 주인 체크
+            if($(afterId2).find(".player").text() == 0){
+               //땅 주인 세팅 (플레이어2 이면 2 이 들어감)
+               $(afterId2).find(".player").text(player);
+               //주인이없으면 땅 가격 세팅
+               $(afterId2).find(".gold").text(200000);
+            } else {
+               //주인이 없으면 땅 가격만큼 가진 돈에서 차감
+               player2money = player2money-($(afterId2).find(".gold").text());
+               $("#player2money").val(player2money);
+            }
+            player = 1;
+         }
+         
+         $("#player1money").val(player1money);
+         $("#player2money").val(player2money);
+      });
+   });
+</script>
+</html>

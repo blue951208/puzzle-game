@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="jquery-ex">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="mariadb-java-client-2.5.0.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/mariadb-java-client-2.5.0/mariadb-java-client-2.5.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gson-2.8.6.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/gson-2.8.6/gson-2.8.6">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="jquery-ex"/>
+        <property name="java-output-path" value="/jquery-ex/build/classes"/>
+    </wb-module>
+</project-modules>

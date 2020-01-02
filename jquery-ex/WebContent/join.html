@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>join Page</title>
+<script src="/jquery-ex/scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h2>회원 가입</h2>
+	<table>
+		<tr>
+			<td>Member-ID:</td>
+			<td><input id="joinId" type="text"></td>
+		</tr>
+		<tr>
+			<td>Member-PW:</td>
+			<td><input id="joinPw" type="text"></td>
+		</tr>
+	</table>
+	<button id="joinMember">회원가입</button>
+</body>
+<script>
+	$("#joinMember").click(function(){
+		$.ajax({
+				url:"/jquery-ex/JoinMember",
+				method:"post",
+				data:{
+					joinId:$("#joinId").val(),
+					joinPw:$("#joinPw").val()
+				},
+				success:function(){
+					location.href = "/jquery-ex/login.html";
+					return false;
+				}
+		});		
+	});
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/jquery-ex/scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h2>PW 변경</h2>
+	<table>
+		<thead>
+			<th>비밀번호 변경</th>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>After PW</td>
+				<td><input id=newPw type="text"></td>
+			</tr>
+		</tbody>
+	</table>
+		<button id="update">변경</button>
+</body>
+<script>
+	$(document).ready(function(){
+		
+		let loginState=null;
+		$.ajax({
+			url : "/jquery-ex/GetSessionInfo", 
+			method : "post",
+			async : false,//동기 요청
+			success : function(json) {
+				loginState = json;
+			}
+		});
+	
+	///////////pw변경 버튼
+	$("#update").click(function(){
+		$.ajax({
+			url:"/jquery-ex/PwUpdate",
+			method:"post",
+			data:{
+				"newPw":$("#newPw").val(),
+				"memberId":loginState
+			},
+			success:function(){
+				location.href = "/jquery-ex/index.html";
+			return false;//function 종료 
+			}
+		});
+	});
+	});
+</script>
+</html>

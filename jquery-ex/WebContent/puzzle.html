@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/jquery-ex/scripts/jquery-3.4.1.min.js"></script>
+<style>
+table, td {
+	border: 1px solid gray;
+}
+
+table {border-collapse;
+}
+
+
+</style>
+</head>
+<body>
+	<button id="master">GM</button>
+	<h1>
+		Puzzle - <span id="loginState"></span>-<span id=timer>0</span>
+	</h1>
+	<h2>
+		Combo : <span id="combo"></span> , BestCombo : <span id="bestCombo"></span>
+	</h2>
+	<button id="logout">Logout</button>
+	<div></div>
+	
+	<button id="mode">Game Start</button>
+	<button id="timeMode">Time Mode</button>
+	
+	<h2 id="score">
+		SCORE:
+	</h2>
+
+	<table class="board">
+	<!-- 
+		<tr>
+			<div class='card'>
+				<td class='pic'></td>
+				<td class='back'></td>
+			</div>
+		</tr>
+	 -->
+	</table>
+	
+	<button id="hint">HINT</button>
+</body>
+	<script src="/jquery-ex/scripts/puzzle_script.js"></script>
+</html>
